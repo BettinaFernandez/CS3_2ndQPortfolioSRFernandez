@@ -94,7 +94,7 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
 
-    button {
+    .button {
     font-family: Verdana;
     font-size: large;
     font-weight: bold;
@@ -106,10 +106,11 @@
     width: 400px;
     text-align: center;
     transition: all 0.4s ease;
+    display: inline-block;
     }
 
-    button:hover{
-    transform: scale(1.09)
+    .button:hover{
+    transform: scale(1.09);
     }
 
     a {
