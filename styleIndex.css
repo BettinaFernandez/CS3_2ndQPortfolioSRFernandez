@@ -95,6 +95,8 @@
     }
 
     .button {
+    flex-direction: column;
+    display: inline-block;
     font-family: Verdana;
     font-size: large;
     font-weight: bold;
