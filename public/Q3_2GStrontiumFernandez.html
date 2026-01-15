@@ -16,28 +16,38 @@
     function confirmReset(){
         return confirm("Are you certain to submit this form?")
     }
+    function noInfo(field){
+        if(field.value == ""){
+            field.style.backgroundColor = "yellow";
+            field.style.border = "3px solid red";
+        }
+        else {
+            field.style.border = "";
+        }
+
+    }
 </script>
 
-<form onsubmit  ="return confirmSubmit()" onreset="confirmReset()" method="post" action="../public/afterSubmit.html">
+<form onsubmit  ="return confirmSubmit()" onreset="confirmReset()" method="post" action="submit">
     <fieldset>
         <label>
             STUDENT ID:
-            <input type="number" name="studentID" required>
+            <input type="number" name="studentID" required onblur = "noInfo(this)">
         </label> <br>
 
         <label>
             FULL NAME:
-            <input type="text" name="fullName" required>
+            <input type="text" name="fullName" required onblur = "noInfo(this)"> 
         </label> <br>
 
         <label>
             BIRTHDAY:
-            <input type="date" name="birthday" required>
+            <input type="date" name="birthday" required onblur = "noInfo(this)">
         </label> <br>
 
         <label>
             EMAIL ADDRESS:
-            <input type="email" name="emailAddress" required>
+            <input type="email" name="emailAddress" required  onblur = "noInfo(this)">
         </label> <br>
 
     </fieldset>
@@ -45,7 +55,7 @@
     <fieldset>
         <label>
             MOBILE PHONE:
-            <input type="text" name="mobilePhone" required>
+            <input type="text" name="mobilePhone" required onblur = "noInfo(this)">
         </label> <br>
 
         <label>
@@ -72,7 +82,7 @@
 
         <label>
             PREFFERED CLUB:
-            <select name="clubs" required>
+            <select name="clubs" required onblur = "noInfo(this)">
                 <option value="XYZ"> Pisay XYZ </option>
                 <option value="Bravura"> Bravura </option>
                 <option value="Pallastro"> Pallastro </option>
@@ -84,7 +94,7 @@
 
         <label>
             WHY DO YOU WANT TO JOIN?:
-                <textarea required></textarea>
+                <textarea required onblur = "noInfo(this)" ></textarea>
         </label> <br>
 
 
