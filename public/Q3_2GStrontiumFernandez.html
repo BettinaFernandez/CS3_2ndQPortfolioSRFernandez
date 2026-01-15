@@ -18,27 +18,27 @@
     }
 </script>
 
-<form onsubmit  ="return confirmSubmit()" onreset="confirmReset()" method="post" action="submit">
+<form onsubmit  ="return confirmSubmit()" onreset="confirmReset()" method="post" action="../public/afterSubmit.html">
     <fieldset>
         <label>
             STUDENT ID:
             <input type="number" name="studentID" required>
-        </label>
+        </label> <br>
 
         <label>
             FULL NAME:
             <input type="text" name="fullName" required>
-        </label>
+        </label> <br>
 
         <label>
             BIRTHDAY:
             <input type="date" name="birthday" required>
-        </label>
+        </label> <br>
 
         <label>
             EMAIL ADDRESS:
             <input type="email" name="emailAddress" required>
-        </label>
+        </label> <br>
 
     </fieldset>
 
@@ -46,7 +46,7 @@
         <label>
             MOBILE PHONE:
             <input type="text" name="mobilePhone" required>
-        </label>
+        </label> <br>
 
         <label>
             GRADE LEVEL:
@@ -58,17 +58,17 @@
                 <option value="Grade 11"> Grade 11 </option>
                 <option value="Grade 12"> Grade 12 </option>
             </select>
-        </label>
+        </label> <br>
 
         <label>
             INTERN:
             <input type="radio" name="intern_or_extern" value="intern" required>
-        </label>
+        </label> <br>
 
         <label>
             EXTERN:
             <input type="radio" name="intern_or_extern" value="extern" required>
-        </label>
+        </label> <br>
 
         <label>
             PREFFERED CLUB:
@@ -80,12 +80,12 @@
                 <option value="Likha"> Likha </option>
                 <option value="Bake_Club"> Bake Club </option>
             </select>
-        </label> 
+        </label> <br>
 
         <label>
             WHY DO YOU WANT TO JOIN?:
                 <textarea required></textarea>
-        </label> 
+        </label> <br>
 
 
     </fieldset>
