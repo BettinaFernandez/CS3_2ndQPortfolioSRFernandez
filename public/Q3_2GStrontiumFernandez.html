@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meTA charset="UTF-8">
+  <title>Club / Organization Application</title>
+  <link rel="icon" href="https://i.pinimg.com/736x/1a/9a/d2/1a9ad2fb80ea84668bf61cd3bf1e9439.jpg" type="image/png">
+</head>
+<body>
+
+<form method="post" action="submit">
+    <fieldset>
+        <label>
+            STUDENT ID:
+            <input type="number" name="studentID" required>
+        </label>
+
+        <label>
+            FULL NAME:
+            <input type="text" name="fullName" required>
+        </label>
+
+        <label>
+            BIRTHDAY:
+            <input type="date" name="birthday" required>
+        </label>
+
+        <label>
+            EMAIL ADDRESS:
+            <input type="email" name="emailAddress" required>
+        </label>
+
+    </fieldset>
+
+    <fieldset>
+        <label>
+            MOBILE PHONE:
+            <input type="text" name="mobilePhone" required>
+        </label>
+
+        <label>
+            GRADE LEVEL:
+            <select name="gradeLevel" required>
+                <option value="Grade 7"> Grade 7 </option>
+                <option value="Grade 8"> Grade 8 </option>
+                <option value="Grade 9"> Grade 9 </option>
+                <option value="Grade 10"> Grade 10 </option>
+                <option value="Grade 11"> Grade 11 </option>
+                <option value="Grade 12"> Grade 12 </option>
+            </select>
+        </label>
+
+        <label>
+            INTERN:
+            <input type="radio" name="intern_or_extern" value="intern" required>
+        </label>
+
+        <label>
+            EXTERN:
+            <input type="radio" name="intern_or_extern" value="extern" required>
+        </label>
+
+        <label>
+            PREFFERED CLUB:
+            <select name="clubs" required>
+                <option value="XYZ"> Pisay XYZ </option>
+                <option value="Bravura"> Bravura </option>
+                <option value="Pallastro"> Pallastro </option>
+                <option value="Volant"> Volant </option>
+                <option value="Likha"> Likha </option>
+                <option value="Bake_Club"> Bake Club </option>
+            </select>
+        </label> 
+
+        <label>
+            WHY DO YOU WANT TO JOIN?:
+                <textarea required></textarea>
+        </label> 
+
+
+    </fieldset>
+
+    <br>
+
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
