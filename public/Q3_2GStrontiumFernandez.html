@@ -8,13 +8,17 @@
 <body>
 
 <script>
-    function onSubmit() {
-        
+    function confirmSubmit() {
+        alert("From submitted");
+        return true;
+    }
 
+    function confirmReset(){
+        return confirm("Are you certain to submit this form?")
     }
 </script>
 
-<form method="post" action="submit">
+<form onsubmit  ="return confirmSubmit()" onreset="confirmReset()" method="post" action="submit">
     <fieldset>
         <label>
             STUDENT ID:
