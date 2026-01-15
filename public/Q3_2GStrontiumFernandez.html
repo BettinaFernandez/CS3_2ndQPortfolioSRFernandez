@@ -4,10 +4,35 @@
 <meTA charset="UTF-8">
   <title>Club / Organization Application</title>
   <link rel="icon" href="https://i.pinimg.com/736x/1a/9a/d2/1a9ad2fb80ea84668bf61cd3bf1e9439.jpg" type="image/png">
+
+  <style>
+    body{
+        background: url("https://media1.tenor.com/m/HOV3NDoyGQQAAAAC/nerd.gif") center no-repeat;
+        background-position-x: center;
+        background-position-y: 335px;
+
+    }
+    .form{
+        margin: 100px;
+        margin-top: 30px;
+        border: 3px solid rgb(122, 122, 33);
+        background-color: beige;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bolder;
+    }
+    input, textarea, select {
+        font-family:cursive;
+    }
+    input:focus, textarea:focus, select:focus {
+        background-color: cornflowerblue;
+    }
+
+  </style>
+
 </head>
 <body>
 
-<script>
+<script> ///Sir im so sorry tinamad ako magstyling adasfihasdifhasifhhd
     function confirmSubmit() {
         alert("From submitted");
         return true;
@@ -28,6 +53,7 @@
     }
 </script>
 
+<div class="form">
 <form onsubmit  ="return confirmSubmit()" onreset="confirmReset()" method="post" action="submit">
     <fieldset>
         <label>
@@ -106,6 +132,7 @@
     <input type="reset" value="Reset">
 
 </form>
+</div>
 
 
 
