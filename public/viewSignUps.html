@@ -33,10 +33,10 @@
   <div id="output"></div>
 
   <script>
-    var KEY = 'club_applications';
+    var KEY = 'club_applications'; //the data from the previous html file 
 
-    function load() {
-      var raw = localStorage.getItem(KEY);
+    function load() { //pulls from local stroage
+      var raw = localStorage.getItem(KEY); 
       if (raw) {
         return JSON.parse(raw);
       } else {
@@ -44,11 +44,11 @@
       }
     }
 
-    function render() {
-      var entries = load();
-      var choice = document.getElementById('clubFilter').value;
-      var out = document.getElementById('output');
-      var totalText = document.getElementById('total');
+    function render() { //updates the table
+      var entries = load(); //student update
+      var choice = document.getElementById('clubFilter').value; //club dropdown box
+      var out = document.getElementById('output'); //the message thing
+      var totalText = document.getElementById('total'); //count of signups so far
 
       if (entries.length == 0) {
         out.innerHTML = "<div class='msg-box'>No data saved in Local Storage.</div>";
@@ -58,10 +58,10 @@
         var tableHtml = "<table><tr><th>Club</th><th>ID</th><th>Name</th><th>Grade</th><th>Email</th><th>Mobile</th><th>Intern / Extern</th></tr>";
         var count = 0;
 
-        for (var i = 0; i < entries.length; i++) {
+        for (var i = 0; i < entries.length; i++) { //this goes through all the entries
           var item = entries[i];
 
-          if (choice == "ALL" || item.club == choice) {
+          if (choice == "ALL" || item.club == choice) { //this one toggles how the table is presented when the user toggles the dropdown box thing
             tableHtml += "<tr>";
             tableHtml += "<td>" + item.club + "</td>";
             tableHtml += "<td>" + item.studentID + "</td>";

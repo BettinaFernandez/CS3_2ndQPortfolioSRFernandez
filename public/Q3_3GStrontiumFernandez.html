@@ -43,19 +43,19 @@
 
 <script> ///Sir im so sorry tinamad ako magstyling adasfihasdifhasifhhd
 
-    const KEY = 'club_applications';
+    const KEY = 'club_applications'; //so this is where the data is stored in the storage thingy
 
-    function loadApps() {
+    function loadApps() { //gets the applications 
       const raw = localStorage.getItem(KEY);
       if (raw){  
-        return JSON.parse(raw);
+        return JSON.parse(raw); //the data is returned as a string to theee list thing
       }
       else{
         return [];
       }
     }
 
-    function saveApps(entries) {
+    function saveApps(entries) { //saves the list and in the storage browser something
       localStorage.setItem(KEY, JSON.stringify(entries));
     }
 
@@ -70,7 +70,7 @@
         }
     }
 
-    function escapeHtml(s) {
+    function escapeHtml(s) { //sir i trust your code so i guesssss this avoids some of the html to ano ano with the js
       let str = String(s);
       let escapedStr = "";
       for (let i = 0; i < str.length; i++) {
@@ -175,7 +175,7 @@
         const check = confirm("Are you certain to submit this form?");
         if (!check) return;
 
-        const application = {
+        const application = { //this one collects all the info from the form and stores it 
             id: Date.now(),
             studentID: document.getElementById('studentID').value,
             name: document.getElementById('fullName').value,
@@ -183,9 +183,11 @@
             time: new Date().toLocaleTimeString()
         };
 
-        const apps = loadApps();
-        apps.push(application);
-        saveApps(apps);
+        const apps = loadApps(); //loads the list
+
+        apps.push(application); //saves the new sign-upper
+
+        saveApps(apps); //loads in the browser
 
         alert("Application Saved Successfully!");
         mainForm.reset();
