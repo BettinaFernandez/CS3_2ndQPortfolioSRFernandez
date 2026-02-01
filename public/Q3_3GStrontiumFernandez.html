@@ -178,8 +178,13 @@
         const application = { //this one collects all the info from the form and stores it 
             id: Date.now(),
             studentID: document.getElementById('studentID').value,
-            name: document.getElementById('fullName').value,
+            fullName: document.getElementById('fullName').value,
+            grade: document.getElementById('gradeLevel').value,  
+            email: document.getElementById('emailAddress').value,
+            phone: document.getElementById('mobilePhone').value, 
             club: document.getElementById('clubs').value,
+            // This line finds which radio button (intern/extern) is clicked
+            type: document.querySelector('input[name="memberType"]:checked').value, 
             time: new Date().toLocaleTimeString()
         };
 
