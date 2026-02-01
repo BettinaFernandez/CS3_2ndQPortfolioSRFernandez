@@ -10,7 +10,6 @@
         background: url("https://media1.tenor.com/m/HOV3NDoyGQQAAAAC/nerd.gif") center no-repeat;
         background-position-x: center;
         background-position-y: 335px;
-
     }
     .form{
         margin: 100px;
@@ -19,6 +18,7 @@
         background-color: beige;
         font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-weight: bolder;
+        padding: 20px;
     }
     input, textarea, select {
         font-family:cursive;
@@ -27,20 +27,38 @@
         background-color: cornflowerblue;
     }
 
+    .view-button {
+        margin-top: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        width: 100%;
+    }
   </style>
 
 </head>
 <body>
 
 <script> ///Sir im so sorry tinamad ako magstyling adasfihasdifhasifhhd
-    function confirmSubmit() {
-        alert("From submitted");
-        return true;
+
+    const KEY = 'club_applications';
+
+    function loadApps() {
+      const raw = localStorage.getItem(KEY);
+      if (raw){  
+        return JSON.parse(raw);
+      }
+      else{
+        return [];
+      }
     }
 
-    function confirmReset(){
-        return confirm("Are you certain to submit this form?")
+    function saveApps(entries) {
+      localStorage.setItem(KEY, JSON.stringify(entries));
     }
+
     function noInfo(field){
         if(field.value == ""){
             field.style.backgroundColor = "yellow";
@@ -48,45 +66,59 @@
         }
         else {
             field.style.border = "";
+            field.style.backgroundColor = "";
         }
+    }
 
+    function escapeHtml(s) {
+      let str = String(s);
+      let escapedStr = "";
+      for (let i = 0; i < str.length; i++) {
+        let c = str[i];
+        if (c === '&') escapedStr += '&amp;';
+        else if (c === '<') escapedStr += '&lt;';
+        else if (c === '>') escapedStr += '&gt;';
+        else if (c === '"') escapedStr += '&quot;';
+        else if (c === "'") escapedStr += '&#39;';
+        else escapedStr += c;
+      }
+      return escapedStr;
     }
 </script>
 
 <div class="form">
-<form onsubmit  ="return confirmSubmit()" onreset="confirmReset()" method="post">
+<form id="appForm">
     <fieldset>
         <label>
             STUDENT ID:
-            <input type="number" name="studentID" required onblur = "noInfo(this)">
+            <input type="number" id="studentID" required onblur="noInfo(this)">
         </label> <br>
 
         <label>
             FULL NAME:
-            <input type="text" name="fullName" required onblur = "noInfo(this)"> 
+            <input type="text" id="fullName" required onblur="noInfo(this)"> 
         </label> <br>
 
         <label>
             BIRTHDAY:
-            <input type="date" name="birthday" required onblur = "noInfo(this)">
+            <input type="date" id="birthday" required onblur="noInfo(this)">
         </label> <br>
 
         <label>
             EMAIL ADDRESS:
-            <input type="email" name="emailAddress" required  onblur = "noInfo(this)">
+            <input type="email" id="emailAddress" required onblur="noInfo(this)">
         </label> <br>
-
     </fieldset>
 
     <fieldset>
         <label>
             MOBILE PHONE:
-            <input type="text" name="mobilePhone" required onblur = "noInfo(this)">
+            <input type="text" id="mobilePhone" required onblur="noInfo(this)">
         </label> <br>
 
         <label>
             GRADE LEVEL:
-            <select name="gradeLevel" required>
+            <select id="gradeLevel" required>
                 <option value="Grade 7"> Grade 7 </option>
                 <option value="Grade 8"> Grade 8 </option>
                 <option value="Grade 9"> Grade 9 </option>
@@ -98,17 +130,17 @@
 
         <label>
             INTERN:
-            <input type="radio" name="intern_or_extern" value="intern" required>
+            <input type="radio" name="memberType" value="intern" checked>
         </label> <br>
 
         <label>
             EXTERN:
-            <input type="radio" name="intern_or_extern" value="extern" required>
+            <input type="radio" name="memberType" value="extern">
         </label> <br>
 
         <label>
-            PREFFERED CLUB:
-            <select name="clubs" required onblur = "noInfo(this)">
+            PREFERRED CLUB:
+            <select id="clubs" required onblur="noInfo(this)">
                 <option value="XYZ"> Pisay XYZ </option>
                 <option value="Bravura"> Bravura </option>
                 <option value="Pallastro"> Pallastro </option>
@@ -120,29 +152,45 @@
 
         <label>
             WHY DO YOU WANT TO JOIN?:
-                <textarea required onblur = "noInfo(this)" ></textarea>
+            <textarea id="reason" required onblur="noInfo(this)"></textarea>
         </label> <br>
-
-
     </fieldset>
 
     <br>
 
     <input type="submit" value="Submit">
-    <input type="reset" value="Reset">
-
+    <input type="reset" value="Reset" onclick="return confirm('Are you sure you want to clear the form?')">
+    
+    <button type="button" class="view-button" onclick="window.location.href='viewSignUps.html'">View Signups</button>
 </form>
 </div>
 
+<script>
 
+    const mainForm = document.getElementById('appForm');
 
+    mainForm.onsubmit = function(event) {
+        event.preventDefault();
 
+        const check = confirm("Are you certain to submit this form?");
+        if (!check) return;
 
+        const application = {
+            id: Date.now(),
+            studentID: document.getElementById('studentID').value,
+            name: document.getElementById('fullName').value,
+            club: document.getElementById('clubs').value,
+            time: new Date().toLocaleTimeString()
+        };
 
+        const apps = loadApps();
+        apps.push(application);
+        saveApps(apps);
 
-
-
-
+        alert("Application Saved Successfully!");
+        mainForm.reset();
+    };
+</script>
 
 </body>
 </html>

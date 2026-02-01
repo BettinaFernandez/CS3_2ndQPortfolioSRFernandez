@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title> Signed Up Students </title>
+  <style>
+    body { font-family: Arial; margin: 20px; }
+    .nav { color: blue; text-decoration: underline; cursor: pointer; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th { background-color: darkblue; color: white; border: 1px solid black; padding: 10px; }
+    td { border: 1px solid black; padding: 8px; }
+    .msg-box { border: 1px solid black; padding: 10px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <h1> Club Application Forms </h1>
+
+  <a href="Q3_3GStrontiumFernandez.html" class="nav">Back to Club Form </a> <br><br>
+
+  Select to view a Club: 
+  <select id="clubFilter" onchange="render()">
+    <option value="ALL"> Select me! </option>
+        <option value="XYZ"> Pisay XYZ </option>
+        <option value="Bravura"> Bravura </option>
+        <option value="Pallastro"> Pallastro </option>
+        <option value="Volant"> Volant </option>
+        <option value="Likha"> Likha </option>
+        <option value="Bake_Club"> Bake Club </option>
+  </select>
+
+  <p id="total">Total Signup/s : 0</p>
+  <div id="output"></div>
+
+  <script>
+    var KEY = 'club_applications';
+
+    function load() {
+      var raw = localStorage.getItem(KEY);
+      if (raw) {
+        return JSON.parse(raw);
+      } else {
+        return [];
+      }
+    }
+
+    function render() {
+      var entries = load();
+      var choice = document.getElementById('clubFilter').value;
+      var out = document.getElementById('output');
+      var totalText = document.getElementById('total');
+
+      if (entries.length == 0) {
+        out.innerHTML = "<div class='msg-box'>No data saved in Local Storage.</div>";
+        totalText.innerHTML = "Total Signup : 0";
+      } 
+      else {
+        var tableHtml = "<table><tr><th>Club</th><th>ID</th><th>Name</th><th>Grade</th><th>Email</th><th>Mobile</th><th>Intern / Extern</th></tr>";
+        var count = 0;
+
+        for (var i = 0; i < entries.length; i++) {
+          var item = entries[i];
+
+          if (choice == "ALL" || item.club == choice) {
+            tableHtml += "<tr>";
+            tableHtml += "<td>" + item.club + "</td>";
+            tableHtml += "<td>" + item.studentID + "</td>";
+            tableHtml += "<td>" + item.fullName + "</td>";
+            tableHtml += "<td>" + item.grade + "</td>";
+            tableHtml += "<td>" + item.email + "</td>";
+            tableHtml += "<td>" + item.phone + "</td>";
+            tableHtml += "<td>" + item.type + "</td>";
+            tableHtml += "</tr>";
+            
+            count = count + 1;
+          }
+        }
+
+        tableHtml += "</table>";
+        totalText.innerHTML = "Total Signup : " + count;
+
+        if (count == 0) {
+          out.innerHTML = "<div class='msg-box'>No Sign Ups for the club</div>";
+        } 
+        else {
+          out.innerHTML = tableHtml;
+        }
+      }
+    }
+
+    render();
+  </script>
+
+</body>
+</html>
