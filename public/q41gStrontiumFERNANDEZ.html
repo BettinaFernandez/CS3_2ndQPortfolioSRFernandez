@@ -1,0 +1,79 @@
+<DOCTYPE html>
+    <html>
+        <head>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+            <script src="q41gSCRIPT.js" defer></script>
+            
+            <style>
+                .stars i{
+                    color: grey;
+                    font-size: 35px;
+                    cursor: pointer;
+                    transition: color 0.2s ease;
+                }
+                .stars i.active{
+                    color: rgb(255, 170, 0);
+                }
+            </style>
+        </head>
+        <body>
+
+<section class="box">
+    <h1> Add a Racket </h1>
+
+    <form id="racket-rivals">
+        <div class="form">
+            <label> Racket Name: </label>
+            <input type="text" id="racket-name">
+        </div>
+
+        <div class="form">
+            <label> Racket Rank </label>
+            <select id="rank">
+                <option value="" disabled selected hidden> Select a Rank</option>
+                <option value="Divine"> Divine </option>
+                <option value="Spirit"> Spirit </option>
+                <option value="Mythical"> Mythical </option>
+                <option value="Legendary"> Legendary </option>
+                <option value="Rare"> Rare </option>
+                <option value="Common"> Common </option>
+            </select>
+        </div>
+
+        <div class="form">
+            <label> Racket Rating: </label>
+            <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+        </div>
+    </form>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </body>
+    </html>

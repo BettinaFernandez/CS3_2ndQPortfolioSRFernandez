@@ -1,0 +1,51 @@
+body{
+    background-image:url("assets/sanrio_imgupscaler.ai_V1\(Fast\)_2K.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh;
+    margin: 0;
+}
+.Homepage-text{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    color: rgb(30, 16, 75);
+    font-weight: bold;  
+}
+.Homepage-box{
+background-color: rgba(255, 255, 255, 0.096);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  width: 50%;
+margin: auto;
+border-radius: 30px;   
+}
+
+.image-link {
+text-align: center;
+display: inline-block;
+margin: 20px;
+}
+
+.image-link img {
+ width: 150px;
+height: auto;
+display: block;
+margin-bottom: 5px;
+transition: transform 0.3s ease; /* Smooth animation */
+}
+
+.image-link img:hover {
+transform: scale(1.1); /* Expand by 10% */
+}
+
+.image-link a {
+font-family: cursive;
+text-decoration: none;
+color: rgb(52, 52, 255);
+font-weight: bold;
+}
+.image-link a:hover {
+color: rgb(141, 25, 147);
+}
