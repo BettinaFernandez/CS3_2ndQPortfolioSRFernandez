@@ -43,14 +43,29 @@ function saveRacket() {
 }
 function render() {
     const all = JSON.parse(localStorage.getItem('rackets') || "[]");
-    let html = "<h2>Racket List</h2>";
+    let html = "<h2>Racket List 🏸</h2>";
 
-    for (let r of all) {
+    for (let i =0; i < all.length; i++) {
+        let r = all[i]
         let outputStar = "★".repeat(Math.round(r.stars));
-        html += "<div class='racket-output'>" + "<strong>" + r.name + "</strong> : " + r.rank +" " + "<span class='goldstars'>" + outputStar + "</div>";
+        html += "<div class='racket-output'>" + "<strong>" + r.name + "</strong> : " + r.rank +" " + "<span class='goldstars'>" + outputStar + "</span>" + "<button type= 'button' class = 'deleteButton' onclick = 'deleteRacket(" + i + ")'> Remove Racket </button ></div>";
     }
 
     listDiv.innerHTML = html;
+}
+
+function deleteRacket(index) {
+    const all = JSON.parse(localStorage.getItem('rackets') || "[]");
+    const racketName = all[index].name
+
+    if(confirm("Are you sure you want to delete " + racketName + "?")){
+        all.splice(index, 1)
+
+            localStorage.setItem('rackets', JSON.stringify(all))
+
+            render();
+        
+    }
 }
 
 render();
