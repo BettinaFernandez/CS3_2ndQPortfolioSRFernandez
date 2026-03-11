@@ -1,4 +1,4 @@
-let currentRating = 0;
+let currentRating = 0; //displaying and function of stars to be user-interactable
 const listDiv = document.getElementById('output');
 const stars = document.querySelectorAll(".stars i");
 stars.forEach((star,index1) => {
@@ -15,11 +15,11 @@ function saveRacket() {
     const name = document.getElementById('racket-name').value;
     const rank = document.getElementById('rank').value;
 
-    const all = JSON.parse(localStorage.getItem('rackets') || "[]");
+    const all = JSON.parse(localStorage.getItem('rackets') || "[]"); //reading
 
     let existing = false;
 
-    for(let i =0; i < all.length; i++){
+    for(let i =0; i < all.length; i++){ //getting the average of the stars (update in CRUD)
         if(all[i].name === name) {
             let current = all[i].count || 1;
             let inTotal = (all[i].stars*current) + currentRating;
@@ -34,14 +34,14 @@ function saveRacket() {
         }
     }
     if(!existing) {
-        all.push({ name: name, rank: rank, stars: currentRating, count: 1 });
+        all.push({ name: name, rank: rank, stars: currentRating, count: 1 }); //create in crud
     }
     
     localStorage.setItem('rackets', JSON.stringify(all));
 
     render();
 }
-function render() {
+function render() { //displaying the average
     const all = JSON.parse(localStorage.getItem('rackets') || "[]");
     let html = "<h2>Racket List 🏸</h2>";
 
@@ -54,7 +54,7 @@ function render() {
     listDiv.innerHTML = html;
 }
 
-function deleteRacket(index) {
+function deleteRacket(index) { //deleting the rackets (delete in CRUD)
     const all = JSON.parse(localStorage.getItem('rackets') || "[]");
     const racketName = all[index].name
 
