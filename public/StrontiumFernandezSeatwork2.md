@@ -57,7 +57,7 @@
 
 - Guided Question: What changed compared to the default static positioning? Try to give different values to top and left or you can change it to bottom, right.
 
-# Answer: The side bar, initially exactly between the header and the main content, now appears above the main content and is slightly situated away from the bottom of the header and the side of the screen. Since relative is used, it means that it positions back to the original position of the sidebar and allows it to move around without affecting the layout of the other classes.
+###### Answer: The side bar, initially exactly between the header and the main content, now appears above the main content and is slightly situated away from the bottom of the header and the side of the screen. Since relative is used, it means that it positions back to the original position of the sidebar and allows it to move around without affecting the layout of the other classes.
 
 ### Step 2 (Fixed):
 
@@ -65,7 +65,7 @@
 
 - Guided Question: What happens when you scroll the page? Why does the footer behave differently from position relative?
 
-# Answer: The footer, intially right under the main content, now appears against the bottom of the screen--permanently situated there for the whole website. Since fixed is used, it means that the object will not be able to move around and will stay in a specific position in the viewport. It behaves differently from position relative, which allows the item to move according to specified coordinates.
+###### Answer: The footer, intially right under the main content, now appears against the bottom of the screen--permanently situated there for the whole website. Since fixed is used, it means that the object will not be able to move around and will stay in a specific position in the viewport. It behaves differently from position relative, which allows the item to move according to specified coordinates.
 
 ### Step 3 (Absolute):
 
@@ -73,7 +73,7 @@
 
 - Guided Question: What is the effect of position: absolute on an element? How is it different from fixed?
 
-# Answer: Position absolute is relative to element right next to the nearest item that was positioned before it, while position fixed is relative to the viewport.
+###### Answer: Position absolute is relative to element right next to the nearest item that was positioned before it, while position fixed is relative to the viewport.
 
 ### Step 4 : (Absolute)
 
@@ -94,31 +94,31 @@
 
 - Guided Question: Why does the notice appear on top of the content? What happens if you swap the z‑index values?
 
-# Answer: The notice appears on top of the content because based on the z-index, we can visualize it as a way of layering. Since notice has a z-index=2, and content has a z-index = 1, notice appears to be on top of the content because it has a greater z-index or higher layer than contet. If the z-index values swapped, then content will appear above notice since it now has a higher z-index of 2 instead of 1.
+###### Answer: The notice appears on top of the content because based on the z-index, we can visualize it as a way of layering. Since notice has a z-index=2, and content has a z-index = 1, notice appears to be on top of the content because it has a greater z-index or higher layer than contet. If the z-index values swapped, then content will appear above notice since it now has a higher z-index of 2 instead of 1.
 
 - Challenge: 
     * What changes that you have to do on the code that will position .notice box on the top right corner of the .content box? Please write the code on paper as well (both html and css on the part of .notice and .content)
 
     * Try to change the position of .content to relative then to fixed. What do you observed each time?
-    # Answer: When changed to position relative, the main content returns to it's original position in the webpage. When fixed, then it stays on the same position as the position absolute. 
+    ###### Answer: When changed to position relative, the main content returns to it's original position in the webpage. When fixed, then it stays on the same position as the position absolute. 
     
     * What do you observe on about the effect of z-index on .notice and .content boxes?
-    # Answer: The z-index affects which class/element will overlap the other.
+    ###### Answer: The z-index affects which class/element will overlap the other.
 
 3. Please answer the following reflection questions (15 minutes)
 
     a. Could you summarize the differences between the CSS position values (static, relative, absolute, fixed)? 
-    # Answer: Static is the default layout in the normal document flow. Relative is the original position of the element. Absolute is positioned relative to its nearest parent element. Fixed is relative to the viewport's layout.
+    ###### Answer: Static is the default layout in the normal document flow. Relative is the original position of the element. Absolute is positioned relative to its nearest parent element. Fixed is relative to the viewport's layout.
 
     b. How does absolute positioning depend on its parent element?
-    # Answer: Absolute positioning depends on its parent element to define how and where it is positioned in the layout. 
+    ###### Answer: Absolute positioning depends on its parent element to define how and where it is positioned in the layout. 
 
     c. How do you differentiate sticky from fixed (you can research on sticky)?
-    # Answer: Sticky is when an element is defined in position relative, but it reaches a limit in scrolling to the point where it then acts as a position fixed, staying still in a designated area. Position fixed is just keeping the element in one spot only.
+    ###### Answer: Sticky is when an element is defined in position relative, but it reaches a limit in scrolling to the point where it then acts as a position fixed, staying still in a designated area. Position fixed is just keeping the element in one spot only.
 
     d. If you were designing a webpage for a school event, how might you use positioning to highlight important information? Please give concrete examples.
-    # Answer: This is how I would use positioning:
-    # 1. Static - for the school logo so that the user has an insight on which school and event the website covers.
-    # 2. Relative - make separate boxes to contain schedules, venues, activities, and programs hosted by the event.
-    # 3. Absolute - position the said boxes next to each other to create an organized flow of information.
-    # 4. Fixed - used for the header, to toggle between webpages, or the footer, to show credibility and copyright.
+    ###### Answer: This is how I would use positioning:
+    ###### 1. Static - for the school logo so that the user has an insight on which school and event the website covers.
+    ###### 2. Relative - make separate boxes to contain schedules, venues, activities, and programs hosted by the event.
+    ###### 3. Absolute - position the said boxes next to each other to create an organized flow of information.
+    ###### 4. Fixed - used for the header, to toggle between webpages, or the footer, to show credibility and copyright.
