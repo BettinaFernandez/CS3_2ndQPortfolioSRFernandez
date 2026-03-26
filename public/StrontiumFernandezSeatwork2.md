@@ -103,13 +103,22 @@
     # Answer: When changed to position relative, the main content returns to it's original position in the webpage. When fixed, then it stays on the same position as the position absolute. 
     
     * What do you observe on about the effect of z-index on .notice and .content boxes?
+    # Answer: The z-index affects which class/element will overlap the other.
 
 3. Please answer the following reflection questions (15 minutes)
 
     a. Could you summarize the differences between the CSS position values (static, relative, absolute, fixed)? 
+    # Answer: Static is the default layout in the normal document flow. Relative is the original position of the element. Absolute is positioned relative to its nearest parent element. Fixed is relative to the viewport's layout.
 
     b. How does absolute positioning depend on its parent element?
+    # Answer: Absolute positioning depends on its parent element to define how and where it is positioned in the layout. 
 
     c. How do you differentiate sticky from fixed (you can research on sticky)?
+    # Answer: Sticky is when an element is defined in position relative, but it reaches a limit in scrolling to the point where it then acts as a position fixed, staying still in a designated area. Position fixed is just keeping the element in one spot only.
 
     d. If you were designing a webpage for a school event, how might you use positioning to highlight important information? Please give concrete examples.
+    # Answer: This is how I would use positioning:
+    # 1. Static - for the school logo so that the user has an insight on which school and event the website covers.
+    # 2. Relative - make separate boxes to contain schedules, venues, activities, and programs hosted by the event.
+    # 3. Absolute - position the said boxes next to each other to create an organized flow of information.
+    # 4. Fixed - used for the header, to toggle between webpages, or the footer, to show credibility and copyright.
