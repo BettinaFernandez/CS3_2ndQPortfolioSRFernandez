@@ -99,6 +99,38 @@
 - Challenge: 
     * What changes that you have to do on the code that will position .notice box on the top right corner of the .content box? Please write the code on paper as well (both html and css on the part of .notice and .content)
 
+
+```html
+
+  <div class="header">Header</div>
+  <div class="sidebar">Sidebar</div>
+  <div class="content">Main Content  </div>
+  <div class="footer">Footer</div>
+  <div class ="notice"> Notice! </div>
+
+```
+```css
+.content {
+      background: lightyellow;
+      width: 300px;
+      height: 200px;
+      position: fixed; top: 66px; left: 200px;
+      z-index: 1;
+
+
+    }
+
+    .notice {
+    position: absolute;
+    top: 66px;
+    left: 430px;
+    background: orange;
+    padding: 10px;
+    z-index: 2;
+    }
+
+```
+
     * Try to change the position of .content to relative then to fixed. What do you observed each time?
     ###### Answer: When changed to position relative, the main content returns to it's original position in the webpage. When fixed, then it stays on the same position as the position absolute. 
     
