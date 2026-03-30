@@ -42,7 +42,7 @@
       <a href="index.html#output">Output</a>
     </nav>
     
-    <h1 style="padding: 30px">Your Name / Section Mar 2026 </h1>
+    <h1 style="padding: 30px">Bettina Fernandez/Strontium Mar 2026 </h1>
   </header>
 
   <section id="table">
@@ -55,65 +55,77 @@
         <th> Correction Done</th>
       </tr>
       <tr>
-        <td> 1 </td> 
-        <td> </td> 
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td> 2 </td> 
-        <td> </td> 
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td> 3 </td> 
-        <td> </td> 
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td> 4 </td> 
-        <td> </td> 
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td> 5 </td> 
-        <td> </td> 
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td> 6 </td> 
-        <td> </td> 
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td> 7 </td> 
-        <td> </td> 
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td> 8 </td> 
-        <td> </td> 
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td> 9 </td> 
-        <td> </td> 
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td> 10 </td> 
-        <td> </td> 
-        <td> </td>
-        <td> </td>
-      </tr>
+  <td>1</td>
+  <td>Line 12 (JS)</td>
+  <td>point.styleleft is not a valid property/td>
+  <td>point.style.left</td>
+</tr>
+
+<tr>
+  <td>2</td>
+  <td>Line 13 (JS)</td>
+  <td>point.stylebottom is not a valid property</td>
+  <td>point.style.bottom</td>
+</tr>
+
+<tr>
+  <td>3</td>
+  <td>Line 1 (JS)</td>
+  <td>parameters x0, y0, x and y were not declared</td>
+  <td>function plotPoint(x0, y0, x, y)</td>
+</tr>
+
+<tr>
+  <td>4</td>
+  <td>Line 6 (JS)</td>
+  <td>in1 and out1 were not defined inside the function</td>
+  <td>var in1 = document.getElementById("in1")
+  var out1 = document.getElementById("out1")</td>
+</tr>
+
+<tr>
+  <td>5</td>
+  <td>Line 12 - 13 (JS)</td>
+  <td>Signs of the coordinates plot in the wrong directions (positive x -> left side, negative y -> upwards, etc.)</td>
+  <td>point.style.left = (origin - (x - x0) - 5) + 'px';
+    point.style.bottom = (origin - (y - y0) - 5) + 'px';</td>
+</tr>
+
+<tr>
+  <td>6</td>
+  <td>Line 36 (CSS)</td>
+  <td>nav a :hover has a space</td>
+  <td>nav a:hover</td>
+</tr>
+
+<tr>
+  <td>7</td>
+  <td>Line 6 (CSS)</td>
+  <td>Multiple font families overriding each other</td>
+  <td>font-family: font-family: 'OpenSans', 'Poppins', 'Roboto', sans-serif;</td>
+</tr>
+
+<tr>
+  <td>8</td>
+  <td>Line 48 (CSS)</td>
+  <td>.point was missing position: absolute</td>
+  <td>position: absolute</td>
+</tr>
+
+<tr>
+  <td>9</td>
+  <td>Line 59 (CSS)</td>
+  <td>#myAxis used bottom: 0, conflicting with JS calculations</td>
+  <td>top: 0</td>
+</tr>
+
+<tr>
+  <td>10</td>
+  <td>Line 28 (CSS)</td>
+  <td>nav a's display: block causes the elements to stack vertically</td>
+  <td>display: inline-block;</td>
+</tr>
+
      
     </table>
     <hr>
